@@ -1,0 +1,47 @@
+﻿@model IEnumerable<corum_pharmacy.Models.Pharmacy>
+@{
+	ViewData["Title"] = "PharmacyList";
+	Layout = "~/Views/Shared/_PharmacyList.cshtml";
+}
+<div class="container" style="margin-top:25px;">
+	<div class="text-center">
+		<h1 class="display-4" style="margin-top:10px;margin-bottom:20px;font-weight:bold;">Nobetci Eczaneler Listesi</h1>
+	</div>
+	@Html.DropDownList("Ilceler",(List<SelectListItem>)ViewBag.value1,new {@class = "form-control"})
+	@Html.ActionLink("Category","Category","Pharmacy")
+	<div>
+		<Table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ilce</th>
+					<th>bolge</th>
+					<th>eczane</th>
+					<th>tel</th>
+					<th>adres</th>
+					<th>adres_tarifi</th>
+					<th>enlem</th>
+					<th>boylam</th>
+					<th>baslangic</th>
+					<th>bitis</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td scope="row">@item.ilce</td>
+						<td scope="row">@item.bolge</td>
+						<td scope="row">@item.eczane</td>
+						<td scope="row">@item.tel</td>
+						<td scope="row">@item.adres</td>
+						<td scope="row">@item.adres_tarifi</td>
+						<td scope="row">@item.enlem</td>
+						<td scope="row">@item.boylam</td>
+						<td scope="row" style="width:100px;">@item.baslangic</td>
+						<td scope="row" style="width:100px;">@item.bitis</td>
+					</tr>
+				}
+			</tbody>
+		</Table>
+	</div>
+</div>

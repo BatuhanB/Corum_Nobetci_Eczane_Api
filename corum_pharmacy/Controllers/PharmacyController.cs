@@ -42,7 +42,7 @@ namespace corum_pharmacy.Controllers
                                           }).ToList();
             ViewBag.ilce_id = towns.Select(x => x.ilce_id).ToList();
             ViewBag.value1 = value;
-            return PartialView(towns);
+            return View(towns);
         }
         
     }

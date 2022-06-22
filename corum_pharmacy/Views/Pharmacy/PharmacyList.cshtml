@@ -7,8 +7,10 @@
 	<div class="text-center">
 		<h1 class="display-4" style="margin-top:10px;margin-bottom:20px;font-weight:bold;">Nobetci Eczaneler Listesi</h1>
 	</div>
-	@Html.DropDownList("Ilceler",(List<SelectListItem>)ViewBag.value1,new {@class = "form-control"})
-	@Html.ActionLink("Category","Category","Pharmacy")
+	<div style="display:flex;width:50%;margin-bottom:10px;">
+		<a href="/Pharmacy/Category" style="text-decoration:none;margin-right:10px;" class="btn btn-danger"> İlçeler </a>
+		@Html.DropDownList("Ilceler",(List<SelectListItem>)ViewBag.value1,new {@class = "form-control"})
+	</div>
 	<div>
 		<Table class="table table-hover">
 			<thead>
